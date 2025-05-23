@@ -1,0 +1,15 @@
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/.env": true,
+    "**/node_modules": true
+  },
+  "python.defaultInterpreterPath": "backend/venv/bin/python",
+  "python.analysis.typeCheckingMode": "basic",
+  "eslint.enable": true,
+  "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"]
+}
