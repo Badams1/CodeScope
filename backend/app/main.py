@@ -65,7 +65,8 @@ def read_root():
 @app.post("/scan")
 async def scan_file(file: UploadFile = File(...)):
 
-    temp_path = "/tmp/codescope_uploads/temp_upload.py"
+    os.makedirs("/tmp/codescope_uploads", exist_ok=True)
+    temp_path = f"/tmp/codescope_uploads/{file.filename}"
     with open(temp_path, "wb") as buffer:
         shutil.copyfileobj(file.file, buffer)
 
