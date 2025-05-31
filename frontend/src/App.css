@@ -1,32 +1,248 @@
 body {
-  background: linear-gradient(to bottom right, #000000, #000000);
+  background: linear-gradient(to bottom right, #0f172a, #1e293b);
   color: rgb(0, 0, 0);
   font-family: system-ui, sans-serif;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
   display: flex;
-  align-items: flex-start;
   justify-content: center;
-  height: 100vh;
+  align-items: flex-start;
 }
 
+.dashboard-container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .section-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-decoration: none;
   color: #ffffff;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   text-align: center;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.upload-box {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #000000;
-  padding: 2rem;
+/* Compact Test File Display Section */
+.test-file-section-compact {
+  background: linear-gradient(135deg, #1e293b, #334155);
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
-  color: black;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid #475569;
+  width: 100%;
+  max-width: 800px;
+}
+
+.test-file-header-compact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.test-file-info-compact {
+  flex: 1;
+  text-align: left;
+}
+
+.test-file-title-compact {
+  color: #f1f5f9;
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.drag-indicator-header {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  text-align: center;
+  border-radius: 6px;
+  animation: pulse 2s infinite;
+  font-size: 0.8rem;
+}
+
+.drag-text-header {
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.test-file-description {
+  display: none;
+}
+
+.test-file-description code {
+  display: none;
+}
+
+.test-file-actions-compact {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.drag-drop-btn, .download-btn-compact, .toggle-code-btn {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.drag-drop-btn {
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: white;
+  cursor: grab;
+}
+
+.drag-drop-btn:hover {
+  background: linear-gradient(135deg, #6d28d9, #7c3aed);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(124, 58, 237, 0.3);
+}
+
+.drag-drop-btn:active {
+  cursor: grabbing;
+}
+
+.download-btn-compact {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: white;
+}
+
+.download-btn-compact:hover {
+  background: linear-gradient(135deg, #047857, #059669);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
+}
+
+.toggle-code-btn {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+}
+
+.toggle-code-btn:hover {
+  background: linear-gradient(135deg, #818cf8, #6366f1);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(99, 102, 241, 0.3);
+}
+
+.test-file-display-compact {
+  background: #0f172a;
+  border-radius: 8px;
+  border: 2px dashed #475569;
+  padding: 0.75rem;
+  cursor: grab;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.test-file-display-compact:hover {
+  border-color: #6366f1;
+  box-shadow: 0 3px 12px rgba(99, 102, 241, 0.2);
+  transform: translateY(-1px);
+}
+
+.test-file-display-compact:active {
+  cursor: grabbing;
+}
+
+.drag-indicator-compact {
+  display: none;
+}
+
+.drag-text-compact {
+  display: none;
+}
+
+.test-code-view-compact {
+  background-color: #0f172a;
+  color: #f8fafc;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  overflow-x: auto;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Legacy Test File Styles - Remove these */
+.test-file-section {
+  display: none;
+}
+
+.test-file-header {
+  display: none;
+}
+
+.test-file-title {
+  display: none;
+}
+
+.test-file-actions {
+  display: none;
+}
+
+.download-btn, .analyze-btn {
+  display: none;
+}
+
+.test-file-display {
+  display: none;
+}
+
+.drag-indicator {
+  display: none;
+}
+
+.drag-text {
+  display: none;
+}
+
+.test-code-view {
+  display: none;
+}
+
+.test-file-info {
+  display: none;
+}
+
+.info-text {
+  display: none;
+}
+
+/* Main Upload Section */
+.upload-box {
+  max-width: 800px;
+  width: 100%;
+  background: linear-gradient(135deg, #1e293b, #334155);
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid #475569;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 input[type="file"] {
@@ -58,44 +274,44 @@ input[type="file"] {
   margin-top: 0.5rem;
 }
 
-code {
-  background: #e2e8f0;
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-family: monospace;
-}
-
-
 .upload-button {
   display: block;
-  padding: 12px 24px;
-  background: linear-gradient(to right, #6366f1, #4f46e5);
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
   color: white;
   font-weight: bold;
   text-align: center;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  margin-bottom: 1rem;
-  transition: background 0.3s ease;
+  margin: 0 auto 1rem auto;
+  transition: all 0.3s ease;
+  border: 2px dashed transparent;
+  font-size: 1.1rem;
+  width: fit-content;
+  min-width: 300px;
+  box-sizing: border-box;
 }
 
 .upload-button:hover {
-  background: linear-gradient(to right, #818cf8, #6366f1);
+  background: linear-gradient(135deg, #818cf8, #6366f1);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
 }
 
 .upload-box.dragover {
   border: 2px dashed #4f46e5;
-  background-color: #111827;
+  background: linear-gradient(135deg, #1e293b, #312e81);
+  transform: scale(1.02);
 }
 
 .issue-results {
-  max-height: 400px;         /* Adjust this as needed */
+  max-height: 400px;
   overflow-y: auto;
-  padding-right: 8px;        /* Optional: spacing from scrollbar */
+  padding-right: 8px;
   margin-top: 1rem;
-  border: 1px solid #ccc;    /* Optional: border for clarity */
+  border: 1px solid #475569;
   border-radius: 8px;
-  background-color: #f9fafb;
+  background-color: #0f172a;
 }
 
 .code-view {
@@ -103,9 +319,10 @@ code {
   color: #f8fafc;
   padding: 1rem;
   border-radius: 8px;
-  font-family: monospace;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
   max-height: 500px;
   overflow-y: auto;
+  border: 1px solid #374151;
 }
 
 .code-line {
@@ -113,6 +330,7 @@ code {
   gap: 8px;
   padding: 2px 0;
   cursor: default;
+  transition: background-color 0.2s ease;
 }
 
 .code-line:hover {
@@ -123,12 +341,42 @@ code {
   background-color: #fef3c7;
   color: black;
   cursor: pointer;
+  border-radius: 4px;
+  animation: highlight-flash 0.5s ease-in-out;
+}
+
+@keyframes highlight-flash {
+  0% { background-color: #fbbf24; }
+  100% { background-color: #fef3c7; }
+}
+
+.test-code-line {
+  display: flex;
+  gap: 8px;
+  padding: 2px 0;
+  transition: background-color 0.2s ease;
+}
+
+.test-code-line:hover {
+  background-color: #1e293b;
+}
+
+.test-line-number {
+  color: #64748b;
+  min-width: 30px;
+  text-align: right;
+  user-select: none;
+}
+
+.test-line-text {
+  color: #e2e8f0;
 }
 
 .line-number {
   color: #94a3b8;
   min-width: 40px;
   text-align: right;
+  user-select: none;
 }
 
 .issue-modal {
@@ -137,26 +385,133 @@ code {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
 }
 
 .modal-content {
-  background: white;
-  color: black;
-  padding: 1.5rem;
-  border-radius: 12px;
-  width: 400px;
+  background: linear-gradient(135deg, #1e293b, #334155);
+  color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 500px;
   max-width: 90%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid #475569;
+  animation: modal-appear 0.3s ease-out;
 }
 
+@keyframes modal-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: #f1f5f9;
+  font-size: 1.3rem;
+}
+
+.severity {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.severity.high {
+  background-color: #dc2626;
+  color: white;
+}
+
+.severity.medium {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.severity.low {
+  background-color: #10b981;
+  color: white;
+}
+
+.close-modal-btn {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.close-modal-btn:hover {
+  background: linear-gradient(135deg, #818cf8, #6366f1);
+  transform: translateY(-1px);
+}
 
 .loading-msg {
-  color: #6366f1;
+  color: #818cf8;
   font-weight: bold;
   font-size: 1.2rem;
   text-align: center;
   margin: 1rem;
+  animation: loading-pulse 1.5s infinite;
+}
+
+@keyframes loading-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+  }
+  
+  .dashboard-container {
+    padding: 1rem;
+  }
+  
+  .test-file-header-compact {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .test-file-info-compact {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .test-file-actions-compact {
+    justify-content: center;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .modal-content {
+    width: 95%;
+    padding: 1.5rem;
+  }
 }
