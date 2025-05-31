@@ -210,9 +210,12 @@ function App() {
         {selectedIssue && (
           <div className="issue-modal" onClick={() => setSelectedIssue(null)}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-              <h3>🚨 Issue on Line {selectedIssue.line_number}</h3>
+              <h3>Issue on Line {selectedIssue.line_number}</h3>
               <p><strong>Severity:</strong> <span className={`severity ${selectedIssue.severity.toLowerCase()}`}>{selectedIssue.severity}</span></p>
               <p><strong>Confidence:</strong> {selectedIssue.confidence}</p>
+              {selectedIssue.explanation && (
+                <p><strong>Explanation:</strong> {selectedIssue.explanation}</p>
+              )}
               <button onClick={() => setSelectedIssue(null)} className="close-modal-btn">Close</button>
             </div>
           </div>
