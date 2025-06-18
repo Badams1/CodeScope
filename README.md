@@ -11,11 +11,9 @@ CodeScope is an AI-powered code review and static analysis platform that helps d
 ## Tech Stack
 - Backend: FastAPI, Python
 - Frontend: React, Tailwind
-- AI: GPT-4 API
+- AI: GPT-3.5 API
 - Security Tools: Semgrep, Bandit, ESLint
 
-## Setup
-See `scripts/setup.sh` (coming soon)
 
 ## License
 MIT
