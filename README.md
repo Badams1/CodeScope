@@ -1,6 +1,6 @@
 # CodeScope 
 
-CodeScope is an AI-powered code review and static analysis platform that helps developers identify bugs, security issues, and inefficiencies in their code using tools like GPT-4, Bandit, and Semgrep.
+CodeScope is an AI-powered code review and static analysis platform that helps developers identify bugs, security issues, and inefficiencies in their code using tools like GPT-3.5, Bandit, and Semgrep.
 
 ## Features
 - Static code scanning for Python & JS
